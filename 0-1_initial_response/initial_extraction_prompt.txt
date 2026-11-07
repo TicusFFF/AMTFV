@@ -1,0 +1,29 @@
+Your task is to accurately extract the final answer from the given problem and solution process. Please carefully read the entire question and solution process to find the final answer.
+
+Important notes:
+1. Only extract the final answer, without units or other textual explanations.
+2. Do not output any additional content, such as \boxed{{}} wrapping, etc.
+3. For multiple answers, output a Python-style list, e.g. [-2, 2], not prose such as "x = -2 or x = 2".
+
+The answers may take various forms, including but not limited to:
+
+1. Integers or decimals: 10, -1.5
+2. Fractions: \frac{{1}}{{2}}, -\frac{{3}}{{4}}
+3. Text answers: even, odd
+4. Square root expressions: \sqrt{{10}}, \sqrt[3]{{8}}
+5. Constants: π, e
+6. Algebraic expressions: a+1, y = x + 1
+7. Multiple choice options: A, B, C, D
+8. Matrices (using LaTeX format):
+   \begin{{bmatrix}}
+   1 & 2 \\
+   3 & 4
+   \end{{bmatrix}}
+
+Here is the problem:
+{query}
+
+Here is the solution:
+{response}
+
+Again, ensure that your output contains only the final answer, without any additional explanations or formatting.

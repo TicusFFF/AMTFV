@@ -1,0 +1,12 @@
+[
+  {
+    "q": "Find the sum of all positive divisors of 7! whose units digit is 1.",
+    "A_original": "22",
+    "answer": "22"
+  },
+  {
+    "q": "How many triples of integers (a, b, c) satisfy 1 <= a < b < c <= 20, a + b + c = 30, and 12 divides a*b*c?",
+    "A_original": "21",
+    "answer": "21"
+  }
+]

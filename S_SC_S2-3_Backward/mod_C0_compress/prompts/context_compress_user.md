@@ -1,0 +1,3 @@
+## Context to Compress
+
+{context}

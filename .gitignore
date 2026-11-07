@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+.DS_Store
+runs/
+*.log
+0-0_datasets/hard_test_raw/HuggingFaceH4/aime_2024/
+0-0_datasets/hard_test_raw/yentinglin/aime_2025/
+*_first_response.jsonl
+*.initial-checkpoint.jsonl
+*.judge-cache.jsonl
+*.sqlite3

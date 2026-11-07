@@ -1,0 +1,16 @@
+openai>=1.66,<3
+requests>=2.31,<3
+tqdm>=4.65,<5
+transformers>=4.48,<5
+tokenizers>=0.21,<0.24
+Flask>=3,<4
+gevent>=24.2
+jupyter-client>=8,<9
+ipykernel>=6,<8
+matplotlib>=3.8,<4
+pillow>=10
+json5>=0.9
+numpy>=1.26,<3
+sympy>=1.12,<2
+scipy>=1.11,<2
+z3-solver>=4.12,<5

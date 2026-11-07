@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.jsonl text eol=lf
+*.csv text eol=lf
+*.png binary
+0-4_API/2_model_capacity/tokenizers/deepseek_v41/tokenizer.json -text
+0-4_API/2_model_capacity/tokenizers/deepseek_v41/tokenizer_config.json -text
+0-4_API/2_model_capacity/tokenizers/deepseek_v41/encoding/encoding.py -text

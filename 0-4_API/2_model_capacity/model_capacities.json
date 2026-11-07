@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "deepseek_official": {
+      "dso_DSv41Flash": {
+        "identity": {
+          "profile": "deepseek_official",
+          "model_alias": "dso_DSv41Flash",
+          "api_model": "deepseek-flash",
+          "base_url": "https://api.deepseek.com",
+          "extra_body": {
+            "thinking": {
+              "type": "disabled"
+            }
+          },
+          "version_policy": "Rolling provider alias; record the response model and fingerprint when available."
+        },
+        "token_counting": {
+          "backend": "deepseek_v4",
+          "paths_relative_to_registry": true,
+          "tokenizer_name_or_path": "tokenizers/deepseek_v41",
+          "encoding_module_path": "tokenizers/deepseek_v41/encoding/encoding.py",
+          "thinking_mode": "chat",
+          "encoding_reasoning_effort": null,
+          "assistant_tail_generation_header": "<｜Assistant｜></think>",
+          "tokenizer_sha256": "c90dfa01249db1be4245780a052ede752e1361c612ac6d08e2bdada7d599476b",
+          "tokenizer_config_sha256": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547",
+          "encoding_sha256": "502bdaec8a3fd88ebc24c4721a7038fbe42f2063c664638127056107920035c1",
+          "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/tree/dba1be0a40aa45a94ad051997016db3960a90277",
+          "source_revision": "dba1be0a40aa45a94ad051997016db3960a90277",
+          "local_files_only": true,
+          "trust_remote_code": false,
+          "use_fast": true,
+          "verified": true,
+          "verification_status": "7 non-thinking text-chat cases matched on 2026-09-13; 3 archived single-user requests matched on 2026-10-22."
+        },
+        "declared": {
+          "context_window_tokens": 1000000,
+          "max_output_tokens": 384000,
+          "source": "DeepSeek official API documentation for DeepSeek-V4.1-Flash; declared limits, not API-measured",
+          "source_url": "https://api-docs.deepseek.com/quick_start/pricing"
+        },
+        "measured": {
+          "observed_default_output_limit_tokens": 8192,
+          "observed_default_output_limit_status": "provider_usage_at_finish_reason_length"
+        }
+      }
+    }
+  }
+}
