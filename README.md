@@ -13,14 +13,7 @@ AMTFV 用于核验和修正大语言模型给出的数学答案。它通过数�
 
 ## 主要结果
 
-下表节选自论文主实验，数值为各方法在 5 个数学题集、共 170 道题上的答案准确率。两个 Flash 设置均使用 `deepseek-v4-flash`，分别关闭和开启思考模式。
-
-| 方法 | DeepSeek-Flash | DeepSeek-Flash-Think | DeepSeek-Pro |
-|---|---:|---:|---:|
-| 初始回答 | 44.1% | 88.8% | 38.8% |
-| ProgCo | 51.2% | 87.6% | 44.7% |
-| ProgCo-Py | 52.9% | 88.2% | 49.4% |
-| **AMTFV** | **61.2%** | **89.4%** | **57.1%** |
+[![论文表 1：各方法在五个数学题集上的准确率，按 DeepSeek-Flash、DeepSeek-Flash-Think 和 DeepSeek-Pro 分列。](assets/main-results.png)](assets/main-results.png)
 
 ## 安装与环境配置
 
