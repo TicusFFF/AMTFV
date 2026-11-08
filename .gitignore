@@ -9,8 +9,10 @@ __pycache__/
 .DS_Store
 runs/
 *.log
-0-0_datasets/hard_test_raw/HuggingFaceH4/aime_2024/
-0-0_datasets/hard_test_raw/yentinglin/aime_2025/
+0-0_datasets/hard_test_raw/*
+!0-0_datasets/hard_test_raw/demo/
+0-0_datasets/hard_test_raw/demo/*
+!0-0_datasets/hard_test_raw/demo/test_top2_filt2.json
 *_first_response.jsonl
 *.initial-checkpoint.jsonl
 *.judge-cache.jsonl

@@ -4,4 +4,4 @@ AMTFV builds on [ProgCo](https://github.com/songxiaoshuai/progco) by Xiaoshuai S
 
 Flash tokenization uses the tokenizer resources identified in the model-capacity configuration. See the accompanying license and model identifiers in `0-4_API/`.
 
-The benchmark files and their source information are documented in `0-0_datasets/`. Third-party code, data and model resources retain their respective licenses.
+The [dataset documentation](0-0_datasets/README.md) lists the sources and terms for preparing the paper benchmarks locally.
