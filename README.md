@@ -1,7 +1,6 @@
 # AMTFV：面向大语言模型自纠错的数学工具流验证
 
-**Agentic Mathematical Tool-Flow Verification for LLM Self-Correction**  
-Rui Zou · Yutao Zhu · Mengqi Wei · Ji-Rong Wen
+**Agentic Mathematical Tool-Flow Verification for LLM Self-Correction**
 
 AMTFV 用于核验和修正大语言模型给出的数学答案。它通过数学工具流（Mathematical Tool Flow，MTF）将数学推理与工具执行分开。模型在核验过程中提出计算请求，工具箱执行计算，模型根据返回的结果继续核验或修正答案。
 
@@ -47,8 +46,20 @@ python 0-3_all_model_test/run_plan_S_SC/S_SC_S2-3_Backward/run_amtfv.py --datase
 
 要改跑 HMMT，请先按 `0-0_datasets/README.md` 准备题集，再将两步命令中的 `--dataset demo` 换成 `--dataset hmmt_feb_2025`。
 
+部分验证与纠错代码改编自 ProgCo，详见[来源说明](THIRD_PARTY.md)。
+
 ## 引用
 
-Rui Zou, Yutao Zhu, Mengqi Wei, and Ji-Rong Wen. *AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction.*
+[arXiv:2607.29549](https://arxiv.org/abs/2607.29549)
 
-[第三方来源](THIRD_PARTY.md)
+```bibtex
+@misc{zou2026amtfv,
+  title = {{AMTFV}: Agentic Mathematical Tool-Flow Verification for {LLM} Self-Correction},
+  author = {Zou, Rui and Zhu, Yutao and Wei, Mengqi and Wen, Ji-Rong},
+  year = {2026},
+  eprint = {2607.29549},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  url = {https://arxiv.org/abs/2607.29549}
+}
+```
