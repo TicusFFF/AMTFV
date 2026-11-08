@@ -17,8 +17,10 @@ Replace `hmmt_feb_2025` with a dataset key below. If you already have the source
 |---|---:|---|
 | `aime_2024` | 30 | [HuggingFaceH4/aime_2024](https://huggingface.co/datasets/HuggingFaceH4/aime_2024), Mathematical Association of America |
 | `aime_2025` | 30 | [yentinglin/aime_2025](https://huggingface.co/datasets/yentinglin/aime_2025), Mathematical Association of America |
-| `brumo_2025` | 30 | [MathArena/brumo_2025](https://huggingface.co/datasets/MathArena/brumo_2025), Brown University Math Olympiad ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)) |
-| `hmmt_feb_2025` | 30 | [MathArena/hmmt_feb_2025](https://huggingface.co/datasets/MathArena/hmmt_feb_2025), Harvard–MIT Mathematics Tournament ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)) |
-| `amo_bench` | 50 | [Meituan LongCat, AMO-Bench](https://huggingface.co/datasets/meituan-longcat/AMO-Bench), Shengnan An and colleagues ([MIT](AMO-Bench-LICENSE.txt)) |
+| `brumo_2025` | 30 | [MathArena/brumo_2025](https://huggingface.co/datasets/MathArena/brumo_2025), Brown University Math Olympiad |
+| `hmmt_feb_2025` | 30 | [MathArena/hmmt_feb_2025](https://huggingface.co/datasets/MathArena/hmmt_feb_2025), Harvard–MIT Mathematics Tournament |
+| `amo_bench` | 50 | [Meituan LongCat, AMO-Bench](https://huggingface.co/datasets/meituan-longcat/AMO-Bench), Shengnan An and colleagues (MIT) |
 
-Each source's terms apply when obtaining its data. The script matches the questions and reference answers to the hashes in [the manifest](dataset_manifest.json), preserves the order used in the paper, and saves the prepared input locally under `hard_test_raw/`. The initial-response and experiment commands accept the same dataset key used here.
+Each source's terms apply when obtaining its data. BRUMO and HMMT use the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. The AMO-Bench license is included in `AMO-Bench-LICENSE.txt`.
+
+The script matches the questions and reference answers to the hashes in `dataset_manifest.json`, preserves the order used in the paper, and saves the prepared input locally under `hard_test_raw/`. The initial-response and experiment commands accept the same dataset key used here.
