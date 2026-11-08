@@ -1,54 +1,54 @@
-# AMTFV：面向大语言模型自纠错的数学工具流验证
+# AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction
 
-**Agentic Mathematical Tool-Flow Verification for LLM Self-Correction**
+English | [简体中文](README_zh-CN.md)
 
-AMTFV 用于核验和修正大语言模型给出的数学答案。它通过数学工具流（Mathematical Tool Flow，MTF）将数学推理与工具执行分开。模型在核验过程中提出计算请求，工具箱执行计算，模型根据返回的结果继续核验或修正答案。
+AMTFV verifies and corrects mathematical answers produced by large language models. It separates mathematical reasoning from tool execution through Mathematical Tool Flow (MTF). During verification, the model submits computation requests, the toolbox executes them, and the model uses the returned results to continue verification or revise the answer.
 
-## 方法框架
+## Framework
 
-[![AMTFV 方法框架](assets/framework.png)](assets/framework.png)
+[![AMTFV framework](assets/framework.png)](assets/framework.png)
 
-给定题目和初始回答，左侧模块负责核验候选答案。需要计算时，中间的 MTF 接口将请求传给右侧工具箱。工具箱选择合适的工具，完成计算并返回结果。左侧模块据此接受答案、修正答案，或调整核验步骤。
+Given a problem and an initial response, the module on the left verifies the candidate answer. When computation is needed, the MTF interface in the middle passes the request to the toolbox on the right. The toolbox selects an appropriate tool, performs the computation, and returns the result. The left module then accepts or revises the answer, or adjusts the verification steps.
 
-## 主要结果
+## Main Results
 
-[![论文表 1：各方法在五个数学题集上的准确率。](assets/main-results.png)](assets/main-results.png)
+[![Table 1 from the paper: Accuracy of each method on five mathematical reasoning datasets.](assets/main-results.png)](assets/main-results.png)
 
-## 安装与环境配置
+## Installation and Configuration
 
-在仓库根目录执行：
+Run the following command from the repository root:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-示例调用 DeepSeek 官方 API。请设置 `DEEPSEEK_API_KEY`。PowerShell 使用 `$env:DEEPSEEK_API_KEY = "<your-key>"`，Bash 使用 `export DEEPSEEK_API_KEY="<your-key>"`。
+The example uses the official DeepSeek API. Set `DEEPSEEK_API_KEY`. In PowerShell, use `$env:DEEPSEEK_API_KEY = "<your-key>"`; in Bash, use `export DEEPSEEK_API_KEY="<your-key>"`.
 
-## 快速开始
+## Quick Start
 
-仓库附带的 `demo` 包含两道数学题。执行下面两步会调用模型。
+The included `demo` contains two mathematics problems. The following two steps call the model API.
 
-### 1. 生成公共初答
+### 1. Generate Shared Initial Responses
 
 ```bash
 python 0-1_initial_response/generate_initial_responses.py --dataset demo --output-dir runs/initial
 ```
 
-初答保存在本地 `runs/initial/deepseek-flash_demo_first_response.jsonl`，评分保存在同目录的 `demo.initial-eval.json`。比较不同方法时可共用这批初答，在第 2 步用 `--initial-dir` 指向保存初答和版本记录的目录。
+Initial responses are saved locally to `runs/initial/deepseek-flash_demo_first_response.jsonl`, and their scores are saved to `demo.initial-eval.json` in the same directory. When comparing methods, you can share this batch of initial responses. In step 2, set `--initial-dir` to the directory containing the initial responses and model version records.
 
-### 2. 运行 AMTFV 并评分
+### 2. Run AMTFV and Evaluate
 
 ```bash
 python 0-3_all_model_test/run_plan_S_SC/S_SC_S2-3_Backward/run_amtfv.py --dataset demo --initial-dir runs/initial --run
 ```
 
-程序读取初答，启动本地 Python 工具并执行核验与纠错。每次运行默认写入 `runs/<UTC时间戳>/`。其中 `model_outputs/demo.json` 保存逐题推理和最终回答，`evaluation.json` 保存统一评分结果。参考答案仅用于评分。Python 工具会在本机执行模型生成的代码，请使用专用、低权限的环境。
+The program reads the initial responses, starts the local Python tool, and performs verification and correction. By default, each run is saved to `runs/<UTC-timestamp>/`. The file `model_outputs/demo.json` contains per-problem reasoning and final responses, and `evaluation.json` contains the results from the shared evaluator. Reference answers are used only for evaluation. The Python tool executes model-generated code on your machine, so use a dedicated environment with restricted permissions.
 
-要改跑 HMMT，请先按 `0-0_datasets/README.md` 准备题集，再将两步命令中的 `--dataset demo` 换成 `--dataset hmmt_feb_2025`。
+To run HMMT, first prepare the dataset as described in `0-0_datasets/README.md`, then replace `--dataset demo` with `--dataset hmmt_feb_2025` in both commands.
 
-部分验证与纠错代码改编自 ProgCo，详见[来源说明](THIRD_PARTY.md)。
+Parts of the verification and correction code are adapted from ProgCo. See [attribution](THIRD_PARTY.md).
 
-## 引用
+## Citation
 
 [arXiv:2607.29549](https://arxiv.org/abs/2607.29549)
 
